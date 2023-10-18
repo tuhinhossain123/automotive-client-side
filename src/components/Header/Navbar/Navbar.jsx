@@ -19,7 +19,7 @@ const Navbar = () => {
       </li>
       <li>
         <NavLink
-          to="/"
+          to="/addProduct"
           className={({ isActive, isPending }) =>
             isPending
               ? "pending"
@@ -33,7 +33,7 @@ const Navbar = () => {
       </li>
       <li>
         <NavLink
-          to="/"
+          to="/cart"
           className={({ isActive, isPending }) =>
             isPending
               ? "pending"
@@ -47,7 +47,7 @@ const Navbar = () => {
       </li>
       <li>
         <NavLink
-          to="/"
+          to="/login"
           className={({ isActive, isPending }) =>
             isPending
               ? "pending"
@@ -61,7 +61,7 @@ const Navbar = () => {
       </li>
       <li>
         <NavLink
-          to="/"
+          to="/register"
           className={({ isActive, isPending }) =>
             isPending
               ? "pending"
@@ -104,12 +104,14 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="flex items-center">
-          <img
+        <div className="">
+        <img
             src="https://i.ibb.co/1rvdbK2/logo.jpg"
             alt=""
-            className="w-12 h-12 rounded-full"
+            className="w-10 h-10 rounded-full"
           />
-          <h2 className="text-2xl  font-semibold ml-2 font-mono">Automotive</h2>
+        </div>
+          <h2 className="md:text-2xl font-semibold ml-2 font-mono">Automotive</h2>
         </div>
       </div>
       <div className="navbar-center hidden lg:flex">

@@ -12,11 +12,11 @@ const Banner = () => {
           <div className="hero-content  text-neutral-content"
        data-aos-offset="300"
        data-aos-easing="ease-in-sine">
-            <div className="absolute lg:mr-[600px]">
+            <div className="absolute lg:mr-[600px] p-10">
             <h1 className="mb-10 text-5xl font-bold text-white font-mono">
                 Welcome to <br /> Vehica Car Dealer
               </h1>
-              <button className="btn border-none text-white bg-[#ff6900]">Contact Us</button>
+              <button className="btn border-none text-white bg-red-500">Contact Us</button>
             </div>
           </div>
         </div>
