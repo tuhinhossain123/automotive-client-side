@@ -1,6 +1,7 @@
 import { useLoaderData } from "react-router-dom";
 import Banner from "../../components/Header/Banner/Banner";
 import AllBrands from "../AllBrands/AllBrands";
+import SpecialOffer from "../SpecialOffer/SpecialOffer";
 
 const Home = () => {
   const brands = useLoaderData();
@@ -16,6 +17,7 @@ const Home = () => {
           ))}
         </div>
       </div>
+      <SpecialOffer></SpecialOffer>
     </div>
   );
 };
