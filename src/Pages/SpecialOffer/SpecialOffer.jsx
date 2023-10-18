@@ -1,7 +1,7 @@
 const SpecialOffer = () => {
   return (
     <div className="mb-16 mt-20">
-      <h2 className="text-5xl text-center font-mono">Special Offers</h2>
+      <h2 className="text-5xl px-3 text-center font-mono">Special Offers</h2>
       <div className="lg:flex items-center rounded p-8 bg-black mt-5 mx-10">
         <div>
           <img

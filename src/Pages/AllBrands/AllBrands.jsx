@@ -1,7 +1,9 @@
+import { Link } from "react-router-dom";
+
 /* eslint-disable react/prop-types */
 const AllBrands = ({ brand }) => {
   return (
-    <div className="card bg-base-100 shadow-xl">
+    <Link to={`/brand/${brand.brand_name}`} className="card bg-base-100 shadow-xl">
       <figure className="px-10 pt-10">
         <img
           src={brand.brand_img}
@@ -13,7 +15,7 @@ const AllBrands = ({ brand }) => {
         <h2 className="card-title text-3xl font-mono">{brand.brand_name}</h2>
        
         </div>
-      </div>
+      </Link>
   );
 };
 
