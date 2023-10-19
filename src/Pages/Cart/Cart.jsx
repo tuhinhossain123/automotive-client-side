@@ -1,13 +1,5 @@
-import Slider from "../Slider/Slider";
-
-
-
 const Cart = () => {
-    return (
-        <div>
-            <Slider></Slider>
-        </div>
-    );
+  return <div></div>;
 };
 
 export default Cart;

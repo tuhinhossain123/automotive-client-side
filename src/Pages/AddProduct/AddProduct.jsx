@@ -5,10 +5,10 @@ const AddProduct = () => {
     const brand = form.brand.value;
     const name = form.name.value;
     const price = form.price.value;
-    const ratting = form.ratting.value;
+    const rating = form.rating.value;
     const img = form.img.value;
-    const textArea = form.textArea.value;
-    const user = { brand, name, price, ratting, img, textArea };
+    const description = form.description.value;
+    const user = { brand, name, price, rating, img, description };
     console.log(user);
 
     fetch('http://localhost:5000/product',{
@@ -71,13 +71,13 @@ const AddProduct = () => {
           </div>
           <div className="form-control md:w-1/2">
             <label className="label">
-              <span className="label-text">Ratting:</span>
+              <span className="label-text">Rating:</span>
             </label>
             <label className="input-group">
               <input
                 type="text"
-                name="ratting"
-                placeholder="Ratting"
+                name="rating"
+                placeholder="Rating"
                 className="input input-bordered w-full"
               />
             </label>
@@ -103,7 +103,7 @@ const AddProduct = () => {
             </label>
             <textarea
               className="border p-5"
-              name="textArea"
+              name="description"
               id=""
               cols="10"
               rows="3"
