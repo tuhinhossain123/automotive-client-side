@@ -1,10 +1,9 @@
 import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-
 import { FcGoogle } from "react-icons/fc";
 import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 import { AuthContext } from "../Provider/AuthProvider";
+import Swal from "sweetalert2";
 
 const Login = () => {
   const { singIn, singInWithGoogle } = useContext(AuthContext);
@@ -20,7 +19,13 @@ const Login = () => {
     singIn(email, password)
       .then((result) => {
         console.log(result.user);
-        toast("user Create Successfully");
+        // toast("user Create Successfully");
+        Swal.fire({
+            icon: 'success',
+            title: 'Success',
+            text: 'User login successfully',
+            footer: '<a href="">Why do I have this issue?</a>'
+          })
         e.target.reset();
         navigate("/");
       })

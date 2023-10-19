@@ -25,7 +25,7 @@ const Brand = ({ brand }) => {
         </div>
         <div className="card-actions flex justify-between items-center pt-3">
           <Link to={`/product/${brand._id}`} className="border-2 px-5 py-2 text-lg">Details</Link>
-          <button className="border-2 px-5 py-2 text-lg">Update</button>
+          <Link to={`/update/${brand._id}`} className="border-2 px-5 py-2 text-lg">Update</Link>
         </div>
       </div>
     </div>

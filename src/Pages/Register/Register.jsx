@@ -5,6 +5,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { updateProfile } from "firebase/auth";
 import { AuthContext } from "../Provider/AuthProvider";
+import Swal from "sweetalert2";
 
 const Register = () => {
   const { createUser } = useContext(AuthContext);
@@ -39,7 +40,13 @@ const Register = () => {
     createUser(email, password)
       .then((result) => {
         console.log(result.user);
-        toast("User Registration successfully");
+        // toast("User Registration successfully");
+        Swal.fire({
+          icon: 'success',
+          title: 'Success',
+          text: 'User Registration successfully',
+          footer: '<a href="">Why do I have this issue?</a>'
+        })
         updateProfile(result.user, { displayName: name, photoURL: imgUrl });
         e.target.reset();
         navigate("/")
@@ -65,7 +72,7 @@ const Register = () => {
                 </label>
                 <input
                   type="text"
-                  placeholder="name"
+                  placeholder="Enter Your Name"
                   name="name"
                   className="input input-bordered"
                   required
@@ -80,7 +87,6 @@ const Register = () => {
                   placeholder="img url"
                   name="text"
                   className="input input-bordered"
-                  required
                 />
               </div>
               <div className="form-control">
@@ -89,7 +95,7 @@ const Register = () => {
                 </label>
                 <input
                   type="email"
-                  placeholder="email"
+                  placeholder="Enter Your Email"
                   name="email"
                   className="input input-bordered"
                   required
@@ -101,7 +107,7 @@ const Register = () => {
                 </label>
                 <input
                   type="password"
-                  placeholder="password"
+                  placeholder="Enter you password"
                   name="password"
                   className="input input-bordered"
                   required
@@ -120,7 +126,7 @@ const Register = () => {
                 <ToastContainer />
               </div>
             </form>
-            <p>
+            <p className="text-sm">
               Already have an account please?{" "}
               <Link
                 to="/login"
