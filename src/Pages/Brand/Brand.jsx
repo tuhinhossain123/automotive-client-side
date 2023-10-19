@@ -1,7 +1,9 @@
 /* eslint-disable react/prop-types */
 import { AiOutlineStar } from "react-icons/ai";
+import { Link } from "react-router-dom";
 
 const Brand = ({ brand }) => {
+
   return (
     <div className="card card-compact  bg-base-100 shadow-xl">
       <figure>
@@ -9,7 +11,7 @@ const Brand = ({ brand }) => {
       </figure>
       <div className="card-body space-y-5 mb-4">
         <div className="flex items-center gap-4">
-          <h2 className="text-4xl">{brand.brand}</h2>
+          <h2 className="text-3xl">{brand.brand}</h2>
           <h2 className="card-title text-2xl pt-2 font-semibold">{brand.name}</h2>
         </div>
         <div className="flex justify-between items-center">
@@ -22,7 +24,7 @@ const Brand = ({ brand }) => {
           </div>
         </div>
         <div className="card-actions flex justify-between items-center pt-3">
-          <button className="border-2 px-5 py-2 text-lg">Details</button>
+          <Link to={`/product/${brand._id}`} className="border-2 px-5 py-2 text-lg">Details</Link>
           <button className="border-2 px-5 py-2 text-lg">Update</button>
         </div>
       </div>
