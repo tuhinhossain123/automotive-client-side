@@ -1,6 +1,18 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink, useParams } from "react-router-dom";
+import { AuthContext } from "../../../Pages/Provider/AuthProvider";
+import { useContext } from "react";
 
 const Navbar = () => {
+  const { user, logOut } = useContext(AuthContext);
+  const { id } = useParams();
+
+  const handleLogOut = () => {
+    logOut()
+      .then(() => console.log("login success"))
+      .catch((error) => {
+        console.error(error);
+      });
+  };
   const links = (
     <>
       <li>
@@ -104,21 +116,46 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="flex items-center">
-        <div className="">
-        <img
-            src="https://i.ibb.co/1rvdbK2/logo.jpg"
-            alt=""
-            className="w-10 h-10 rounded-full"
-          />
-        </div>
-          <h2 className="md:text-2xl font-semibold ml-2 font-mono">Automotive</h2>
+          <div className="">
+            <img
+              src="https://i.ibb.co/1rvdbK2/logo.jpg"
+              alt=""
+              className="w-10 h-10 rounded-full"
+            />
+          </div>
+          <h2 className="md:text-2xl font-semibold ml-2 font-mono">
+            Automotive
+          </h2>
         </div>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{links}</ul>
       </div>
       <div className="navbar-end">
-        <a className="btn">Button</a>
+        {user ? (
+          <>
+            <div className="flex items-center">
+              <div className="hidden  md:flex items-center">
+                <span className="mr-4">{user.email}</span>
+                <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                  <div className="w-10 rounded-full">
+                    <img src={user?.photoURL} />
+                  </div>
+                </label>
+              </div>
+              <button
+                onClick={handleLogOut}
+                className="btn bg-secondary text-white btn-sm"
+              >
+                Sing Out
+              </button>
+            </div>
+          </>
+        ) : (
+          <Link to="/login">
+            <button className="btn bg-secondary text-white btn-sm">Sing In</button>
+          </Link>
+        )}
       </div>
     </div>
   );
