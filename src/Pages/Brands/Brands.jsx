@@ -1,13 +1,26 @@
 import { useLoaderData, useParams } from "react-router-dom";
 import Brand from "../Brand/Brand";
+import { useEffect, useState } from "react";
+import Slider from "../Slider/Slider";
 
 const Brands = () => {
   const brands = useLoaderData();
+  const [slider, setSlider]=useState({})
 
   const names=  useParams()
+  console.log(names)
+  useEffect(()=>{
+    fetch(`http://localhost:5000/brands/${names.name}`)
+    .then(res=> res.json())
+    .then(data=> {
+      console.log(data)
+      setSlider(data)
+    })
+  }, [])
 
   return (
     <>
+    <Slider slider={slider}></Slider>
       {brands.length == 0 ? (
         <p className="text-red-500 text-center text-3xl my-20">No Data Found</p>
       ) : (
