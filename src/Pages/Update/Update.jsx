@@ -17,7 +17,7 @@ const Update = () => {
       const user = { brand, name, price, rating, img, type, description };
       console.log(JSON.stringify(user));
   
-      fetch(`http://localhost:5000/product/${date._id}`,{
+      fetch(`https://automotive-server-side-9ny4k41pm-tuhin.vercel.app/product/${date._id}`,{
           method: "PUT",
           headers: {
               "content-type": "application/json"

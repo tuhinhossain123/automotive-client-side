@@ -11,7 +11,7 @@ const AddProduct = () => {
     const description = form.description.value;
     const user = { brand, name, price, rating, img, type, description };
 
-    fetch("http://localhost:5000/product", {
+    fetch("https://automotive-server-side-9ny4k41pm-tuhin.vercel.app/product", {
       method: "POST",
       headers: {
         "content-type": "application/json",

@@ -9,7 +9,7 @@ const Brands = () => {
 
   const names=  useParams()
   useEffect(()=>{
-    fetch(`http://localhost:5000/brands/${names.name}`)
+    fetch(`https://automotive-server-side-9ny4k41pm-tuhin.vercel.app/brands/${names.name}`)
     .then(res=> res.json())
     .then(data=> {
       console.log(data)

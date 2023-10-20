@@ -9,7 +9,7 @@ const CardProvider = ({ children }) => {
 console.log(user?.email)
   useEffect(()=>{
     console.log(cart)
-    fetch(`http://localhost:5000/cart/${user?.email}`,{
+    fetch(`https://automotive-server-side-9ny4k41pm-tuhin.vercel.app/cart/${user?.email}`,{
         method: "PUT",
         headers:{
             "content-type": "application/json"
@@ -19,7 +19,7 @@ console.log(user?.email)
   },[user, cart])
   
   useEffect(()=>{
-    fetch(`http://localhost:5000/cart/${user?.email}`)
+    fetch(`https://automotive-server-side-9ny4k41pm-tuhin.vercel.app/cart/${user?.email}`)
     .then(res => res.json())
     .then(data => {
         setCart(data.product)
