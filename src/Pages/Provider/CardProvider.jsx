@@ -37,6 +37,7 @@ console.log(user?.email)
 
     setCart((prevCart) => [...prevCart, product]);
     toast.success("Product added to cart");
+   
   };
 
   const removeCart = (productId) => {
