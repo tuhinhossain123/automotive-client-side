@@ -48,7 +48,7 @@ const Login = () => {
     <div className="hero " data-aos="zoom-in-left">
       <div className="hero-content flex-col">
         <div className="">
-          <h1 className="text-2xl font-bold">Please Login</h1>
+          <h1 className="text-2xl font-bold dark:text-white">Please Login</h1>
         </div>
         <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
           <div className="card-body">

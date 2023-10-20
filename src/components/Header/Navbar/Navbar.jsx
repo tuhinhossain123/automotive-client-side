@@ -1,10 +1,23 @@
 import { Link, NavLink, useParams } from "react-router-dom";
 import { AuthContext } from "../../../Pages/Provider/AuthProvider";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
   const { id } = useParams();
+
+  const [theme, setTheme] = useState("light");
+
+  useEffect(() => {
+    if (theme === "dark") {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  }, [theme]);
+  const handleTheme = () => {
+    setTheme(theme === "dark" ? "light" : "dark");
+  };
 
   const handleLogOut = () => {
     logOut()
@@ -22,7 +35,7 @@ const Navbar = () => {
             isPending
               ? "pending"
               : isActive
-              ? "text-slate-600 underline font-medium"
+              ? "text-slate-600-600  underline font-medium"
               : ""
           }
         >
@@ -84,6 +97,11 @@ const Navbar = () => {
         >
           Register
         </NavLink>
+      </li>
+      <li>
+        <button onClick={handleTheme}>
+          {theme === "light" ? "Dark" : "Light"}
+        </button>
       </li>
     </>
   );

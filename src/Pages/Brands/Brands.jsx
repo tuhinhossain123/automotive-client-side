@@ -8,7 +8,6 @@ const Brands = () => {
   const [slider, setSlider]=useState({})
 
   const names=  useParams()
-  console.log(names)
   useEffect(()=>{
     fetch(`http://localhost:5000/brands/${names.name}`)
     .then(res=> res.json())

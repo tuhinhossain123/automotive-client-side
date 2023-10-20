@@ -31,7 +31,7 @@ const Update = () => {
     };
     return (
       <div className="px-10 mt-5 mb-16">
-        <h2 className="text-3xl font-semibold text-center mb-5">Add Product</h2>
+        <h2 className="text-3xl font-semibold text-center mb-5 dark:text-white">Add Product</h2>
         <form onSubmit={updateProduct}>
           <div className="md:flex gap-10 mb-5">
             <div className="form-control md:w-1/2">
@@ -49,7 +49,7 @@ const Update = () => {
             </div>
             <div className="form-control md:w-1/2">
               <label className="label">
-                <span className="label-text">Name:</span>
+                <span className="label-text dark:text-white">Name:</span>
               </label>
               <label className="input-group">
                 <input
@@ -65,7 +65,7 @@ const Update = () => {
           <div className="md:flex gap-10 mb-5">
             <div className="form-control md:w-1/2">
               <label className="label">
-                <span className="label-text">Price:</span>
+                <span className="label-text dark:text-white">Price:</span>
               </label>
               <label className="input-group">
                 <input
@@ -79,7 +79,7 @@ const Update = () => {
             </div>
             <div className="form-control md:w-1/2">
               <label className="label">
-                <span className="label-text">Rating:</span>
+                <span className="label-text dark:text-white">Rating:</span>
               </label>
               <label className="input-group">
                 <input
@@ -95,7 +95,7 @@ const Update = () => {
           <div className="md:flex gap-10 mb-5">
             <div className="form-control md:w-1/2">
               <label className="label">
-                <span className="label-text">Img URL:</span>
+                <span className="label-text dark:text-white">Img URL:</span>
               </label>
               <label className="input-group">
                 <input
@@ -109,7 +109,7 @@ const Update = () => {
             </div>
             <div className="form-control md:w-1/2">
               <label className="label">
-                <span className="label-text">Type:</span>
+                <span className="label-text dark:text-white">Type:</span>
               </label>
               <label className="input-group">
                 <input
@@ -126,7 +126,7 @@ const Update = () => {
           </div>
           <div className="form-control md:w-1/2 ">
               <label className="label">
-                <span className="label-text">Short description:</span>
+                <span className="label-text dark:text-white">Short description:</span>
               </label>
               <textarea
                 className="border p-5"

@@ -36,13 +36,13 @@ console.log(user?.email)
     }
 
     setCart((prevCart) => [...prevCart, product]);
-    toast.success("Product added to cart");
+    toast("Product added to cart");
    
   };
 
   const removeCart = (productId) => {
     setCart((prevCart) => prevCart.filter(({ _id }) => _id !== productId));
-    toast.error("Product removed from cart");
+    toast("Product removed from cart");
   };
 
   const cartInfo = { cart, addCart, removeCart };
