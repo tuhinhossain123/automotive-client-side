@@ -7,20 +7,21 @@ const AddProduct = () => {
     const price = form.price.value;
     const rating = form.rating.value;
     const img = form.img.value;
+    const type = form.type.value;
     const description = form.description.value;
-    const user = { brand, name, price, rating, img, description };
+    const user = { brand, name, price, rating, img, type, description };
 
-    fetch('http://localhost:5000/product',{
-        method: "POST",
-        headers: {
-            "content-type": "application/json"
-        },
-        body: JSON.stringify(user)
+    fetch("http://localhost:5000/product", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(user),
     })
-    .then(res=> res.json())
-    .then(data => {
-        console.log(data)
-    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+      });
   };
   return (
     <div className="px-10 mt-5 mb-16">
@@ -96,23 +97,36 @@ const AddProduct = () => {
               />
             </label>
           </div>
-          <div className="form-control md:w-1/2 ">
+          <div className="form-control md:w-1/2">
             <label className="label">
-              <span className="label-text">Short description:</span>
+              <span className="label-text">Type:</span>
             </label>
-            <textarea
-              className="border p-5"
-              name="description"
-              id=""
-              cols="10"
-              rows="3"
-            ></textarea>
+            <label className="input-group">
+              <input
+                type="text"
+                name="type"
+                placeholder="Type"
+                className="input input-bordered w-full"
+              />
+            </label>
           </div>
+        </div>
+        <div className="form-control md:w-1/2 ">
+          <label className="label">
+            <span className="label-text">Short description:</span>
+          </label>
+          <textarea
+            className="border p-5"
+            name="description"
+            id=""
+            cols="10"
+            rows="3"
+          ></textarea>
         </div>
         <input
           type="submit"
           value="Add"
-          className="btn btn-block bg-gray-200"
+          className="btn btn-block bg-gray-200 mt-3"
         />
       </form>
     </div>

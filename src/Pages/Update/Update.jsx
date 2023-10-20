@@ -12,8 +12,9 @@ const Update = () => {
       const price = form.price.value;
       const rating = form.rating.value;
       const img = form.img.value;
+      const type = form.type.value;
       const description = form.description.value;
-      const user = { brand, name, price, rating, img, description };
+      const user = { brand, name, price, rating, img, type, description };
       console.log(JSON.stringify(user));
   
       fetch(`http://localhost:5000/product/${date._id}`,{
@@ -106,7 +107,24 @@ const Update = () => {
                 />
               </label>
             </div>
-            <div className="form-control md:w-1/2 ">
+            <div className="form-control md:w-1/2">
+              <label className="label">
+                <span className="label-text">Type:</span>
+              </label>
+              <label className="input-group">
+                <input
+                  type="text"
+                  name="type"
+                  placeholder="Type"
+                  defaultValue={date.type}
+                  className="input input-bordered w-full"
+                />
+              </label>
+            </div>
+
+           
+          </div>
+          <div className="form-control md:w-1/2 ">
               <label className="label">
                 <span className="label-text">Short description:</span>
               </label>
@@ -119,11 +137,10 @@ const Update = () => {
                 rows="3"
               ></textarea>
             </div>
-          </div>
           <input
             type="submit"
             value="Update"
-            className="btn btn-block bg-gray-200"
+            className="btn btn-block bg-gray-200 mt-3"
           />
         </form>
       </div>
