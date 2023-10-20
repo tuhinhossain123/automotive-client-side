@@ -1,5 +1,5 @@
-## website name : 
-## website link : 
+## website name : Brand-shop
+## website link : https://fir-recap-6affb.web.app/
 
 * Five routes have been created on the website out of which two are Private Route.
 * If the user does not login, he will not able to see the details of the category.
