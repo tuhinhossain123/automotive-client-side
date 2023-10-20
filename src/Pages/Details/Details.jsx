@@ -1,6 +1,9 @@
+import { useContext } from "react";
 import { useLoaderData } from "react-router-dom";
+import { CardContest } from "../Provider/CardProvider";
 
 const Details = () => {
+  const cartContext = useContext(CardContest)
   const details = useLoaderData();
   return (
     <div className="mt-20 mb-16 px-5">
@@ -9,7 +12,7 @@ const Details = () => {
         <h2 className="md:w-[600px] mx-auto text-2xl mt-4 mb-4 font-semibold">
           {details.description}
         </h2>
-        <button className="btn text-center bg-red-500 text-white lg:ml-[305px]">
+        <button onClick={()=>cartContext.addCart(details)} className="btn text-center bg-red-500 text-white lg:ml-[305px]">
           Add To Cart
         </button>
       </div>
